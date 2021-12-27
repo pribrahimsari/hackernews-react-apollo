@@ -1,8 +1,9 @@
-import LinkList from "./LinkList";
 import CreateLink from "./CreateLink";
 import Header from "./Header";
-import {Route,Routes} from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
 import Login from "./Login";
+import Search from "./Search";
+import LinkList from "./LinkList";
 
 function App() {
   return (
@@ -10,9 +11,19 @@ function App() {
       <Header />
       <div className="ph3 pv1 background-gray">
         <Routes>
-          <Route exact path="/" element={<LinkList />} />
-          <Route exact path="/create" element={<CreateLink />} />
+          <Route
+            exact
+            path="/"
+            element={<LinkList />}
+          />
+
+          <Route
+            exact
+            path="/create"
+            element={<CreateLink />}
+          />
           <Route exact path="/login" element={<Login />} />
+          <Route exact path="/search" element={<Search />} />
         </Routes>
       </div>
     </div>
