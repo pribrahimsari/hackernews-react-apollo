@@ -1,6 +1,6 @@
 import CreateLink from "./CreateLink";
 import Header from "./Header";
-import {Route, Routes} from "react-router-dom";
+import {Route, Routes, Navigate} from "react-router-dom";
 import Login from "./Login";
 import Search from "./Search";
 import LinkList from "./LinkList";
@@ -14,7 +14,7 @@ function App() {
           <Route
             exact
             path="/"
-            element={<LinkList />}
+            element={<Navigate to="/new/1" />}
           />
 
           <Route
@@ -24,6 +24,12 @@ function App() {
           />
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/search" element={<Search />} />
+          <Route exact path="/top" element={<LinkList />} />
+          <Route
+            exact
+            path="/new/:page"
+            element={<LinkList />}
+          />
         </Routes>
       </div>
     </div>
