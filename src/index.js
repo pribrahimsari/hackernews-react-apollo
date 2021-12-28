@@ -16,7 +16,7 @@ import { WebSocketLink } from '@apollo/client/link/ws';
 import { getMainDefinition } from '@apollo/client/utilities';
 
 const httpLink = createHttpLink({
-    uri: 'https://hackernews-backend-20211228.herokuapp.com'
+    uri: 'http://localhost:4000'
 });
 
 const authLink = setContext((_, {headers})=>{
@@ -30,7 +30,7 @@ const authLink = setContext((_, {headers})=>{
 });
 
 const wsLink = new WebSocketLink({
-  uri: `ws://hackernews-backend-20211228.herokuapp.com/graphql`,
+  uri: `ws://localhost:4000/graphql`,
   options: {
     reconnect: true,
     connectionParams: {
